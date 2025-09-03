@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard — Parent–Teacher System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-avatar">🎓</div>
+      <div>
+        <div class="brand-title">PTS Dashboard</div>
+        <div id="userRoleBadge" class="badge">Role</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-section="homeSec">Home</button>
+      <button class="nav-item" data-section="messagesSec">Messages</button>
+      <button class="nav-item" data-section="assignSec">Assignments</button>
+      <button class="nav-item" data-section="marksSec">Grades</button>
+      <button class="nav-item" data-section="announceSec">Announcements</button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button id="logoutBtn" class="btn btn-ghost">Log out</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <header class="content-header">
+      <div>
+        <h1 id="welcomeTitle">Welcome</h1>
+        <p class="muted">Have a productive day 👋</p>
+      </div>
+      <div class="header-actions" id="headerActions"><!-- buttons injected dynamically --></div>
+    </header>
+
+    <!-- Home -->
+    <section id="homeSec" class="section active">
+      <div class="grid-3">
+        <div class="stat">
+          <div class="stat-label">Total Assignments</div>
+          <div id="statAssignments" class="stat-value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Unread Messages</div>
+          <div id="statMessages" class="stat-value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Announcements</div>
+          <div id="statAnnouncements" class="stat-value">0</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Recent Announcements</h3>
+        <div id="homeAnnouncements"></div>
+      </div>
+    </section>
+
+    <!-- Messages -->
+    <section id="messagesSec" class="section">
+      <div class="section-head">
+        <h2>Messages</h2>
+        <button id="btnNewMessage" class="btn btn-primary">New Message</button>
+      </div>
+      <div id="messagesList" class="list"></div>
+    </section>
+
+    <!-- Assignments -->
+    <section id="assignSec" class="section">
+      <div class="section-head">
+        <h2>Assignments</h2>
+        <div id="assignActions" class="inline-actions"><!-- Teacher upload button goes here --></div>
+      </div>
+      <div id="assignList" class="list"></div>
+    </section>
+
+    <!-- Grades -->
+    <section id="marksSec" class="section">
+      <div class="section-head">
+        <h2>Grades</h2>
+        <div id="gradeActions" class="inline-actions"><!-- Teacher: Add grade --></div>
+      </div>
+      <div id="marksWrap" class="card">
+        <div id="marksTableWrap"></div>
+      </div>
+    </section>
+
+    <!-- Announcements -->
+    <section id="announceSec" class="section">
+      <div class="section-head">
+        <h2>Announcements</h2>
+        <div id="announceActions" class="inline-actions"><!-- Teacher: Post announcement --></div>
+      </div>
+      <div id="announceList" class="list"></div>
+    </section>
+  </main>
+
+  <!-- MODAL (single reusable) -->
+  <div id="modal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 id="modalTitle">Title</h3>
+        <button id="modalClose" class="icon-btn" aria-label="Close">✖</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

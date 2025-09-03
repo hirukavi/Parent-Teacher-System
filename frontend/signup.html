@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign up — Parent–Teacher System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-body">
+  <div class="auth-card">
+    <div class="brand">
+      <div class="brand-icon">📝</div>
+      <h1>Create your account</h1>
+      <p class="muted">Join as a Teacher, Student, or Parent</p>
+    </div>
+
+    <form id="signupForm" class="form">
+      <div class="grid-2">
+        <div class="form-row">
+          <label>Name</label>
+          <input id="name" type="text" placeholder="Jane Doe" required />
+        </div>
+        <div class="form-row">
+          <label>Role</label>
+          <select id="role" required>
+            <option value="" disabled selected>Select role</option>
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+            <option value="parent">Parent</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Email</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="username" required />
+      </div>
+      <div class="form-row">
+        <label>Password</label>
+        <input id="password" type="password" placeholder="Min 6 characters" minlength="6" autocomplete="new-password" required />
+      </div>
+
+      <button class="btn btn-primary btn-full" type="submit">Create account</button>
+      <div id="signupError" class="form-error" style="display:none;"></div>
+    </form>
+
+    <div class="auth-alt">
+      <span>Already have an account?</span> <a href="login.html">Sign in</a>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

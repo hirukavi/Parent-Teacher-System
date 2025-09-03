@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login — Parent–Teacher System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-body">
+  <div class="auth-card">
+    <div class="brand">
+      <div class="brand-icon">🎓</div>
+      <h1>Parent–Teacher System</h1>
+      <p class="muted">Welcome back! Please sign in.</p>
+    </div>
+
+    <form id="loginForm" class="form">
+      <div class="form-row">
+        <label>Email</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="username" required />
+      </div>
+      <div class="form-row">
+        <label>Password</label>
+        <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" required />
+      </div>
+      <button class="btn btn-primary btn-full" type="submit">Sign in</button>
+      <div id="loginError" class="form-error" style="display:none;"></div>
+    </form>
+
+    <div class="auth-alt">
+      <span>New here?</span> <a href="signup.html">Create an account</a>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
